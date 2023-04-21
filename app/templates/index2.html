@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function show(a)
+            {
+                document.getElementById('tab1').style.display="none";
+                document.getElementById('tab2').style.display="none";
+                document.getElementById(a).style.display="block";
+            }
+            function checkform1()
+            {
+                var myticket;
+                var myhotel;
+                var mytotal
+
+                if (document.getElementById("t1").checked)
+                {
+                    myticket = 1;
+                }
+                if (document.getElementById("t2").checked)
+                {
+                    myticket = 2;
+                }
+                if (document.getElementById("t3").checked)
+                {
+                    myticket = 3;
+                }
+
+                if (document.getElementById("h1").checked)
+                {
+                    myhotel = 1;
+                }
+                if (document.getElementById("h2").checked)
+                {
+                    myhotel = 2;
+                }
+                if (document.getElementById("h3").checked)
+                {
+                    myhotel = 3;
+                }
+                mytotal = myticket*3000+myhotel*1000
+
+                document.getElementById("info1").innerHTML = myticket*3000;
+                document.getElementById("info2").innerHTML = myhotel*1000;
+                document.getElementById("info3").innerHTML = mytotal;
+                return false;
+            }
+            
+            function checkform2()
+            {
+                var mybreakfast;
+                var mylunch;
+                var mydinner;
+                var mytotal
+
+                if (document.getElementById("b1").checked)
+                {
+                    mybreakfast = 1;
+                }
+                if (document.getElementById("b2").checked)
+                {
+                    mybreakfast = 2;
+                }
+                if (document.getElementById("b3").checked)
+                {
+                    mybreakfast = 3;
+                }
+
+                if (document.getElementById("l1").checked)
+                {
+                    mylunch = 1;
+                }
+                if (document.getElementById("l2").checked)
+                {
+                    mylunch = 2;
+                }
+                if (document.getElementById("l3").checked)
+                {
+                    mylunch = 3;
+                }
+
+                if (document.getElementById("d1").checked)
+                {
+                    mydinner = 1;
+                }
+                if (document.getElementById("d2").checked)
+                {
+                    mydinner = 2;
+                }
+                if (document.getElementById("d3").checked)
+                {
+                    mydinner = 3;
+                }
+                mytotal = mybreakfast*100+mylunch*120+mydinner*150
+
+                document.getElementById("minfo1").innerHTML = mybreakfast*100;
+                document.getElementById("minfo2").innerHTML = mylunch*120;
+                document.getElementById("minfo3").innerHTML = mydinner*150;
+                document.getElementById("minfo4").innerHTML = mytotal;
+                return false;
+            }
+
+        </script>
+
+    </head>
+    <body>
+        <center>
+            <a href="javascript:show('tab1')">Booking Tickers And Room</a><Br>
+            <a href="javascript:show('tab2')">Order three Males</a>
+
+            <div id="tab1" style="display: none;">
+                <form method="post" onsubmit="return checkform1()">
+                <table border="1" width="500">
+                    <tr><td>Item / Price</td><td>Quantity</td></tr>
+                    <tr><td>Passenger ticket / 3000</td><td>
+                        <input type="radio" id="t1" name="ticket" value="1"> One Ticket
+                        <input type="radio" id="t2" name="ticket" value="2"> Two Tickets
+                        <input type="radio" id="t3" name="ticket" value="3"> Three Tickets
+                    </td></tr>
+                    <tr><td>Hotel /1000</td><td>
+                        <input type="radio" id="h1" name="hotel" value="1"> One night
+                        <input type="radio" id="h2" name="hotel" value="2"> Two nights
+                        <input type="radio" id="h3" name="hotel" value="3"> Three nights
+                    </td></tr>
+                    <tr><td><input type="submit" value="NEXT"></td><td>Submit Your Purchase, Thank You</td></tr>
+                </table>
+                </form>
+                <br><br>
+                <table border="1" width="500">
+                    <tr><td>Item</td><td>Your Purchase</td></tr>
+                    <tr><td>Ticket</td><td><div id="info1"></td></tr>
+                    <tr><td>Hotel</td><td><div id="info2"></td></tr>
+                    <tr><td>Total</td><td><div id="info3"></td></tr>
+                </table>
+            </div>
+
+            <div id="tab2" style="display: none;">
+                <form method="post" onsubmit="return checkform2()">
+                <table border="1" width="500">
+                    <tr><td>Meal / Price</td><td>Quantity</td></tr>
+                    <tr><td>Breakfast / 100</td><td>
+                        <input type="radio" id="b1" name="breakfast" value="1"> One breakfast
+                        <input type="radio" id="b2" name="breakfast" value="2"> Two breakfasts
+                        <input type="radio" id="b3" name="breakfast" value="3"> Three breakfasts
+
+                    </td></tr>
+                    <tr><td>Lunch /120</td><td>
+                        <input type="radio" id="l1" name="lunch" value="1"> One lunch
+                        <input type="radio" id="l2" name="lunch" value="2"> Two lunchs
+                        <input type="radio" id="l3" name="lunch" value="3"> Three lunchs
+                    </td></tr>
+                    <tr><td>Dinner/150</td><td>
+                        <input type="radio" id="d1" name="dinner" value="1"> One dinner
+                        <input type="radio" id="d2" name="dinner" value="2"> Two dinners
+                        <input type="radio" id="d3" name="dinner" value="3"> Three dinners
+                    </td></tr>
+                    <tr><td><input type="submit" value="NEXT"></td><td>Submit Your Purchase, Thank You</td></tr>
+                </table>
+                </form>
+                <br><br>
+                <table border="1" width="500">
+                    <tr><td>Item</td><td>Your Purchase</td></tr>
+                    <tr><td>Breakfast</td><td><div id="minfo1"></td></tr>
+                    <tr><td>Lunch</td><td><div id="minfo2"></td></tr>
+                    <tr><td>Dinner</td><td><div id="minfo3"></td></tr>
+                    <tr><td>Total</td><td><div id="minfo4"></td></tr>
+                </table>
+            </div>
+
+        </center>
+
+    </body>
+</html>
